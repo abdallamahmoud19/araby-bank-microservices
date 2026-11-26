@@ -2,6 +2,7 @@ package com.araby.accounts.service.impl;
 
 import com.araby.accounts.constants.AccountsConstants;
 import com.araby.accounts.dto.AccountsDto;
+import com.araby.accounts.dto.CreateCustomerDto;
 import com.araby.accounts.dto.CustomerDto;
 import com.araby.accounts.entity.Accounts;
 import com.araby.accounts.entity.Customer;
@@ -28,7 +29,7 @@ public class AccountServiceImpl implements IAccountsService {
      private final AccountsRepository accountsRepository;
 
     @Override
-    public void createAccount(CustomerDto customerDto) {
+    public void createAccount(CreateCustomerDto customerDto) {
         Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
         Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customerDto.getMobileNumber());
         if (optionalCustomer.isPresent()) {

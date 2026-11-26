@@ -1,11 +1,12 @@
 package com.araby.accounts.service;
 
 
+import com.araby.accounts.dto.CreateCustomerDto;
 import com.araby.accounts.dto.CustomerDto;
 
 public interface IAccountsService {
 
-    void createAccount(CustomerDto customerDto);
+    void createAccount(CreateCustomerDto customerDto);
 
     CustomerDto fetchAccount(String mobileNumber);
 

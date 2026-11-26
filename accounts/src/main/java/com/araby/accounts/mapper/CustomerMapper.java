@@ -1,5 +1,6 @@
 package com.araby.accounts.mapper;
 
+import com.araby.accounts.dto.CreateCustomerDto;
 import com.araby.accounts.dto.CustomerDto;
 import com.araby.accounts.entity.Customer;
 
@@ -13,7 +14,7 @@ public class CustomerMapper {
         return customerDto;
     }
 
-    public static Customer mapToCustomer(CustomerDto customerDto, Customer customer) {
+    public static Customer mapToCustomer(CreateCustomerDto customerDto, Customer customer) {
 
         if (customerDto.getName() != null) {
             customer.setName(customerDto.getName());
